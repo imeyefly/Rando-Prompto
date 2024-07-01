@@ -1,6 +1,6 @@
 -This is Rando-Prompto, the customizable random prompt generator.
 
-![RANDOPROMPTO!](Main_App.png)
+![RANDOPROMPTO!](https://media-cdn.tripadvisor.com/media/photo-s/15/73/5a/f7/jhgjh.jpg)
 
 
 -What does Rando-Prompto do?
