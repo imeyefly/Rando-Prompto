@@ -62,6 +62,6 @@ but can be installed with a file in the app folder.
 # Category Editor
 ![](editor.png)
 
-Phrase List Manager
+# Phrase List Manager
 ![](listmanager.png)
   
