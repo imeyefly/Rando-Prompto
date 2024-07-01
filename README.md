@@ -18,6 +18,17 @@ This App Requires Python and PIP to be installed to run. Pyperclip is requires a
 but can be installed with a file in the app folder.
 
 
+# How to run the app:
+* Download the zip file and extract it.
+* Inside the app folder will be 3 .bat files. "Run_Rando_Prompto",
+  "Run_Rando_Prompto_This_File_Installs_or_Updates_Dependencies_Before_Running_App" "Run_Phrase_List_Manager".
+* Use "Run_Rando_Prompto_This_File_Installs_or_Updates_Dependencies_Before_Running_App" if you do not have
+  Pyperclip installed.
+* Use "Run_Rando_Prompto" if you already have Pyperclip installed or after installing it.
+* Use "Run_Phrase_List_Manager" to run the phrase list manager.
+* I recomend making shortcuts of the .bat files and use the included icons for them.
+
+
 # What does Rando-Prompto do?
 
 * Rando-Prompto is a random prompt generator with 10,001 pre-installed phrases to make countless
