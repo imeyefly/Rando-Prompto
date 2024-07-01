@@ -13,7 +13,7 @@
   https://youtu.be/dC7moqtbuCM
   
 
-# NOTE:
+# Rquirements:
 This App Requires Python and PIP to be installed to run. Pyperclip is requires as well
 but can be installed with a file in the app folder.
 
