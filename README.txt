@@ -2,6 +2,8 @@
 
 ![](mainapp.png)
 
+![](terminal.png)
+
 
 -What does Rando-Prompto do?
 
@@ -47,6 +49,12 @@
 * I also included a Backups.zip file to help restore broken list files.
 
 * There are 2 icons included for use with shortcuts of the bat files to launch Rando-Prompto and the manager.
+
+![](selectcategory.png)
+
+![](editor.png)
+
+![](listmanager.png)
 
 
 - A video going over the basics of the app can be found here:
