@@ -9,8 +9,10 @@
 ![](terminal.png)
 
 
+# Video Explanation
 - A video going over the basics of the app can be found here:
   https://youtu.be/dC7moqtbuCM
+  
   
 
 # Rquirements:
