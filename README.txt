@@ -1,6 +1,6 @@
 -This is Rando-Prompto, the customizable random prompt generator.
 
-![](MainApp.png)
+![MainApp](https://github.com/imeyefly/Rando-Prompto/assets/104091042/cafd22a2-5ec8-471c-a6fe-b85bb1176456)
 
 
 -What does Rando-Prompto do?
