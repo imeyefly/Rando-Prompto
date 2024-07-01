@@ -1,0 +1,91 @@
+	
+	Example Phrase List Setup For The List Manager and Auto Formatter:
+	
+	
+	(Note about the following puctuation examples: Most of these are removed during the adding proccess
+	 anyway, but apostrophes and commas are added back to the phrases as part of the string list formatting
+	 to separate the phrases.
+	
+	 The ONLY punctuation that is kept is dashes and underscores, besides the commas and apostrophes that
+	 separate the phrases.
+	
+	 Some of these examples are just in case you manually edit the files in a text editor,
+	 since the list manager takes care of them when you add the phrases.)
+	
+	
+	Example - Vertical List:
+	car
+	a truck
+	a green boat
+	keep
+	adding
+	lines like
+	this
+	
+	
+	Example - Horizontal List:
+	car, a truck, a green boat, keep, adding, lines like, this
+	
+	
+	Example - Mixed List Types:
+	car
+	a truck
+	a green boat
+	car, a truck, a green boat, keep, adding, lines like, this
+	keep
+	adding
+	lines like
+	this
+	
+	
+	Example - Acceptable Punctuation In Phrases:
+	car
+	a_truck
+	a-green boat
+	'apple'
+	"a painting of"
+	
+	'this', 'is', 'also ok', 'to do', 'in', 'the list before', 'adding' (this is the app's internal string formatting)
+	
+	"this", "is", "also", "also ok", "to do", "in", "the list before", "adding"
+	
+	
+	Example - Uncceptable Punctuation In Phrases:
+	jake's (unless you don't mind it becoming "Jakes")
+	
+	(this), ((is not)), (OK to do:1.24), (((if you plan on))), (using the random weights:0.673)
+	(Note: The random weights function removes all existing weights before adding new ones.)
+	
+	'this "is" not OK' (the quotes will get detected as a seperator and split it into 3 parts.)
+	
+	'this 'is' not OK' (the apostrophes around the word 'is' will get detected as a seperator
+	and split it into 3 parts.)
+	
+	
+	Basically, do not bracket your phrases with any symbols except for the ones I showed to be OK.
+	Follow my examples and look at the way the pre-poppulated lists are laid out for more examples.
+	
+	
+	The basic format is: category_name = ['your', 'lists will', 'be formatted like', 'this', 'in the list files in the app']
+	
+	
+    Making your own categories/phrase lists:
+    I used ChatGPT to make most of the lists, along with a chat AI on Huggingface.co to list the X-Rated categories.
+    I recomend asking ChatGPT to make a list of whatever you want. A vertical list is totally OK.
+    Take the lists that chatgpt makes for you and paste them into the Phrase List Manager's input field and click
+    the add button. The list will be formatted correctly and added to the list box. 
+    
+    Avoiding APOSTROPHES is absolutely needed because they break the string list file. The app can have errors. 
+    Try to avoid getting the punctuation I mentioned, by telling chatgpt to make sure not to use any special
+    characters or accent marks. Telling chatgpt to make a python string can get you what you want too (pre-formatted),
+    when the AI is feeling generous. LOL.
+    
+    
+    Fixing a broken category list file:
+    If you do break the list files, and get errors loading the app, and you can't fix it, I have provided a backup of
+    all the original category files. (Checkthe app folder for: Backups.zip)
+	
+	
+	Now,Go Make Some Cool Stuff!!!
+	
+	:EyeFly:

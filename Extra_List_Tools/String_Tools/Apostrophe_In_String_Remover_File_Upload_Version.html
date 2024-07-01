@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apostrophe Detector and Remover</title>
+    <style>
+        body {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: #444;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+            box-sizing: border-box; /* Ensure padding and border are included in width */
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            background-color: #5cb85c;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+        input[type="file"] {
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Apostrophe Detector and Remover</h1>
+		<p>For Python string lists in either (.txt) or (.py) format.</p>
+        <p>Upload your file(s), then click the button to sanitize them and download a zip.</p>
+        
+        <input type="file" id="fileInput" accept="." multiple>
+        
+        <button onclick="processFiles()">Process Files</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.5.0/jszip.min.js"></script>
+    <script>
+        function processFiles() {
+            let files = document.getElementById('fileInput').files;
+
+            if (files.length === 0) {
+                alert('Please select at least one file.');
+                return;
+            }
+
+            let zip = new JSZip();
+            let promises = [];
+
+            for (let i = 0; i < files.length; i++) {
+                let file = files[i];
+                let reader = new FileReader();
+
+                promises.push(new Promise((resolve, reject) => {
+                    reader.onload = function(e) {
+                        let contents = e.target.result;
+
+                        // Process the file content (sanitize logic)
+                        let sanitizedContents = sanitizeText(contents);
+
+                        // Add sanitized content to zip file
+                        zip.file(file.name, sanitizedContents);
+
+                        resolve();
+                    };
+
+                    reader.onerror = function(e) {
+                        reject(e);
+                    };
+
+                    reader.readAsText(file);
+                }));
+            }
+
+            Promise.all(promises).then(() => {
+                // Generate the zip file and trigger download
+                zip.generateAsync({ type: 'blob' }).then(function(content) {
+                    // Trigger download
+                    let a = document.createElement('a');
+                    a.href = URL.createObjectURL(content);
+                    a.download = 'sanitized_files.zip';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                });
+            }).catch((error) => {
+                console.error('Error processing files:', error);
+            });
+        }
+
+        function sanitizeText(contents) {
+            // Sanitize logic (example logic provided)
+            let sanitizedText = contents.replace(/([a-zA-Z])'([a-zA-Z])/g, '$1$2');
+            return sanitizedText;
+        }
+    </script>
+</body>
+</html>

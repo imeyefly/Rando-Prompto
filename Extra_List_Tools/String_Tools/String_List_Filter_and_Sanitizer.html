@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String List Filter and Sanitizer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: white;
+			background-color: #222;
+        }
+        textarea, input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+			background-color: #000;
+			color: white;
+			font-size: 16px;
+        }
+        button {
+            padding: 5px 20px;
+            cursor: pointer;
+			color: white;
+			background-color: #555;
+        }
+        .segment-list {
+            margin: 10px 0;
+			color: white;
+        }
+        .segment-item {
+            display: flex;
+            align-items: center;
+			color: white;
+        }
+        .segment-item input {
+            margin-right: 10px;
+			color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>String List Filter and Sanitizer</h1>
+    <p>Enter your string list (example: 'a red car', 'a green truck', 'a blue bike' or "a green car", "a green truck", "a blue bike"). 
+	<br> 
+	Strings containing the specified filter word are listed with checkboxes to select the ones you want to remove. 
+	<br>
+	Click the Sanitize Strings button to display the string list with the filtered strings removed.</p>
+	<h2 style="font-size: 20px;">Original List</h2>
+    <textarea style="margin-top: -10px;" id="inputText" rows="5" placeholder="Enter string list, here..."></textarea>
+    <input type="text" id="searchWord" placeholder="Enter a filter word to look for, here..." />
+    <button onclick="listSegments()">Search for filter word</button>
+    <div class="segment-list" id="segmentList"></div>
+    <button onclick="sanitizeText()">Remove Selected Strings</button>
+    <h3>Sanitized Strings</h3>
+    <textarea style="margin-top: -10px;" id="outputText" rows="5" readonly placeholder="Sanitized string list will appear, here..."></textarea>
+    <button onclick="copyToClipboard()">Copy to Clipboard</button>
+
+    <script>
+        function listSegments() {
+            // Get input text
+            let inputText = document.getElementById('inputText').value;
+
+            // Get the word to search for
+            let searchWord = document.getElementById('searchWord').value.toLowerCase();
+
+            // Split the text by commas
+            let segments = inputText.split(',');
+
+            // Get the segment list container
+            let segmentList = document.getElementById('segmentList');
+            segmentList.innerHTML = '';
+
+            // Filter segments that contain the search word
+            let filteredSegments = segments.filter(segment => segment.toLowerCase().includes(searchWord));
+
+            // Create checkbox for each filtered segment
+            filteredSegments.forEach((segment, index) => {
+                let segmentItem = document.createElement('div');
+                segmentItem.classList.add('segment-item');
+
+                let checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = `segment-${index}`;
+                checkbox.value = segment;
+                checkbox.checked = true; // Initially checked
+
+                let label = document.createElement('label');
+                label.htmlFor = `segment-${index}`;
+                label.textContent = segment;
+
+                segmentItem.appendChild(checkbox);
+                segmentItem.appendChild(label);
+                segmentList.appendChild(segmentItem);
+            });
+        }
+
+        function sanitizeText() {
+            // Get all checkboxes
+            let checkboxes = document.querySelectorAll('.segment-item input');
+
+            // Get the input text
+            let inputText = document.getElementById('inputText').value;
+
+            // Initialize sanitized text with the input text
+            let sanitizedText = inputText;
+
+            // Iterate through checkboxes to remove selected segments
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    let segmentToRemove = checkbox.value;
+                    sanitizedText = sanitizedText.replace(segmentToRemove, '');
+                }
+            });
+
+            // Remove leading and trailing commas if any
+            sanitizedText = sanitizedText.replace(/^,|,$/g, '');
+
+            // Display the sanitized text
+            document.getElementById('outputText').value = sanitizedText;
+        }
+
+        function copyToClipboard() {
+            // Select the output textarea
+            let outputTextArea = document.getElementById('outputText');
+
+            // Select the text in the textarea
+            outputTextArea.select();
+            outputTextArea.setSelectionRange(0, 99999); // For mobile devices
+
+            // Copy the selected text
+            document.execCommand('copy');
+
+            // Deselect the textarea
+            window.getSelection().removeAllRanges();
+        }
+    </script>
+</body>
+</html>

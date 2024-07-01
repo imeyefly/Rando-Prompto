@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apostrophe Detector and Remover</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: white;
+            background-color: #222;
+        }
+        textarea, input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            background-color: #000;
+            color: white;
+        }
+        button {
+            padding: 5px 20px;
+            cursor: pointer;
+            color: white;
+            background-color: #555;
+            margin-right: 10px;
+        }
+        .segment-list {
+            margin: 10px 0;
+            color: white;
+        }
+        .segment-item {
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+        .segment-item input {
+            margin-right: 10px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Apostrophe Detector and Remover</h1>
+    <p>Enter your string list with possible apostrophes between letters. 
+    <br>
+    The tool will display strings with such apostrophes. 
+    <br>
+    Click the Sanitize Strings button to remove the apostrophes and display the sanitized string list.</p>
+    <h2>Original List</h2>
+    <textarea id="inputText" rows="5" placeholder="Enter string list here..."></textarea>
+    <button onclick="listSegments()">Show Strings with Apostrophes</button>
+    <div class="segment-list" id="segmentList"></div>
+    <button onclick="sanitizeText()">Sanitize List (Remove Apostrophes)</button>
+    <button onclick="truncateText()">Sanitize List (Truncate Apostrophes and Right Letter)</button>
+    <h3>Sanitized Strings List</h3>
+    <textarea id="outputText" rows="5" readonly placeholder="Sanitized string list will appear here..."></textarea>
+    <button onclick="copyToClipboard()">Copy to Clipboard</button>
+
+    <script>
+        function listSegments() {
+            // Get input text
+            let inputText = document.getElementById('inputText').value;
+
+            // Split the text by commas
+            let segments = inputText.split(',');
+
+            // Get the segment list container
+            let segmentList = document.getElementById('segmentList');
+            segmentList.innerHTML = '';
+
+            // Regex to find apostrophes between letters
+            let regex = /[a-zA-Z]'[a-zA-Z]/;
+
+            // Filter segments that contain apostrophes between letters
+            let filteredSegments = segments.filter(segment => regex.test(segment));
+
+            // Create checkbox for each filtered segment
+            filteredSegments.forEach((segment, index) => {
+                let segmentItem = document.createElement('div');
+                segmentItem.classList.add('segment-item');
+
+                let checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = `segment-${index}`;
+                checkbox.value = segment;
+                checkbox.checked = true; // Initially checked
+
+                let label = document.createElement('label');
+                label.htmlFor = `segment-${index}`;
+                label.textContent = segment;
+
+                segmentItem.appendChild(checkbox);
+                segmentItem.appendChild(label);
+                segmentList.appendChild(segmentItem);
+            });
+        }
+
+        function sanitizeText() {
+            // Get all checkboxes
+            let checkboxes = document.querySelectorAll('.segment-item input');
+
+            // Get the input text
+            let inputText = document.getElementById('inputText').value;
+
+            // Initialize sanitized text with the input text
+            let sanitizedText = inputText;
+
+            // Iterate through checkboxes to remove selected segments
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    let segmentToRemove = checkbox.value;
+                    let sanitizedSegment = segmentToRemove.replace(/([a-zA-Z])'([a-zA-Z])/g, '$1$2');
+                    sanitizedText = sanitizedText.replace(segmentToRemove, sanitizedSegment);
+                }
+            });
+
+            // Remove leading and trailing commas if any
+            sanitizedText = sanitizedText.replace(/^,|,$/g, '');
+
+            // Display the sanitized text
+            document.getElementById('outputText').value = sanitizedText;
+        }
+
+        function truncateText() {
+            // Get all checkboxes
+            let checkboxes = document.querySelectorAll('.segment-item input');
+
+            // Get the input text
+            let inputText = document.getElementById('inputText').value;
+
+            // Initialize sanitized text with the input text
+            let sanitizedText = inputText;
+
+            // Iterate through checkboxes to truncate selected segments
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    let segmentToRemove = checkbox.value;
+                    let sanitizedSegment = segmentToRemove.replace(/([a-zA-Z])'([a-zA-Z])/g, '$1');
+                    sanitizedText = sanitizedText.replace(segmentToRemove, sanitizedSegment);
+                }
+            });
+
+            // Remove leading and trailing commas if any
+            sanitizedText = sanitizedText.replace(/^,|,$/g, '');
+
+            // Display the sanitized text
+            document.getElementById('outputText').value = sanitizedText;
+        }
+
+        function copyToClipboard() {
+            // Select the output textarea
+            let outputTextArea = document.getElementById('outputText');
+
+            // Select the text in the textarea
+            outputTextArea.select();
+            outputTextArea.setSelectionRange(0, 99999); // For mobile devices
+
+            // Copy the selected text
+            document.execCommand('copy');
+
+            // Deselect the textarea
+            window.getSelection().removeAllRanges();
+        }
+    </script>
+</body>
+</html>

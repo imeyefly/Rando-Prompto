@@ -1,0 +1,8 @@
+Make shortcuts for these bat files:
+* "Run_Rando_Prompto.bat"
+* "Run_Phrase_List_Manager.bat"
+
+Then open the shortcut files properties and change the icon to the provided icons.
+Just navigate to the folder where to unzipped the app files and find 
+this folder, and select the icon you want to use. Or pick your own icons.
+Then you can place the shortcuts wherever you want on you computer (like the desktop).

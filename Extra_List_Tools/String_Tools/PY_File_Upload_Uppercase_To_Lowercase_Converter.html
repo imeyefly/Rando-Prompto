@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Lowercase Converter</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <style>
+        body {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: #444;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+        button {
+            background-color: #5cb85c;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+        input[type="file"] {
+            background-color: #555;
+            color: #fff;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>File Lowercase Converter</h1>
+		<h2>Converts all uppercase letters to lowercase letters in python string list</h2>
+        <input type="file" id="fileInput" multiple>
+        <br><br>
+        <button onclick="processFiles()">Convert to Lowercase and Download</button>
+    </div>
+
+    <script>
+        function processFiles() {
+            const files = document.getElementById('fileInput').files;
+            if (files.length === 0) {
+                alert('Please select files.');
+                return;
+            }
+
+            const zip = new JSZip();
+            let fileCount = files.length;
+
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const content = event.target.result;
+                    const lowerCaseContent = content.toLowerCase();
+                    zip.file(file.name, lowerCaseContent);
+
+                    if (--fileCount === 0) {
+                        if (files.length === 1) {
+                            const blob = new Blob([lowerCaseContent], { type: 'text/plain' });
+                            saveAs(blob, file.name);
+                        } else {
+                            zip.generateAsync({type: "blob"}).then(function(content) {
+                                saveAs(content, "converted_files.zip");
+                            });
+                        }
+                    }
+                };
+                reader.readAsText(file);
+            }
+        }
+
+        function saveAs(blob, filename) {
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>

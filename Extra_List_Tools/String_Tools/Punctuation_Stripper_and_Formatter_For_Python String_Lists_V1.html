@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Punctuation Stripper and Formatter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: white;
+            background-color: #222;
+        }
+        textarea, input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            background-color: #000;
+            color: white;
+        }
+        button {
+            padding: 5px 20px;
+            cursor: pointer;
+            color: white;
+            background-color: #555;
+            margin-right: 10px;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #666;
+            background-color: #000;
+        }
+        #copyButton {
+            display: none; /* Initially hidden */
+        }
+    </style>
+</head>
+<body>
+    <h1>Text Punctuation Stripper and Formatter</h1>
+    <p>Enter your text with punctuation, special characters, and accents.<br>The tool will strip all non-letter and non-number characters (excluding dashes) and format them into a structured string list.</p>
+    <textarea id="inputText" rows="5" placeholder="Enter Text, Here..."></textarea>
+    <button onclick="formatText()">Format Text</button>
+    <button id="copyButton" onclick="copyToClipboard()">Copy to Clipboard</button>
+    <textarea id="outputDiv" class="output" rows="5" placeholder="Formatted Text Will Be Displayed, Here..." readonly></textarea>
+
+    <script>
+        function sanitize(text) {
+            // Replace underscores with spaces
+            text = text.replace(/_/g, ' ');
+
+            // Handle punctuation surrounded by at least two alphanumeric characters
+            text = text.replace(/([a-zA-Z0-9]{2,})[!"#$%&()*+,./:;<=>?@[\\\]^_`{|}~¡¿]([a-zA-Z0-9]{2,})/g, '$1 $2');
+
+            // Handle possessives like "jake's"
+            text = text.replace(/([a-zA-Z0-9])'[s]\b/g, '$1');
+
+            // Remove accents and then remove all non-letter, non-number characters except spaces and dashes
+            let sanitizedText = text.normalize("NFD").replace(/[\u0300-\u036f]/g, '');
+            sanitizedText = sanitizedText.replace(/[^a-zA-Z0-9\s-]/g, '');
+
+            return sanitizedText.trim(); // Trim leading and trailing spaces
+        }
+
+        function formatText() {
+            let inputText = document.getElementById('inputText').value;
+
+            // Split input text by lines or commas
+            let lines = inputText.split(/[\r\n]+/);
+            let phrases = [];
+
+            // Process each line or comma-separated phrase
+            lines.forEach(line => {
+                // Split by comma if present
+                let parts = line.split(',');
+                parts.forEach(part => {
+                    let sanitizedPhrase = sanitize(part.trim());
+                    if (sanitizedPhrase !== '') {
+                        phrases.push(`'${sanitizedPhrase}'`);
+                    }
+                });
+            });
+
+            // Join phrases with comma and space
+            let formattedList = phrases.join(', ');
+
+            // Display the formatted list
+            document.getElementById('outputDiv').textContent = formattedList;
+
+            // Show the copy button
+            document.getElementById('copyButton').style.display = 'inline';
+        }
+
+        function copyToClipboard() {
+            let outputText = document.getElementById('outputDiv').textContent;
+            navigator.clipboard.writeText(outputText).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+    </script>
+</body>
+</html>

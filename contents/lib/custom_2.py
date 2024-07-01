@@ -1,0 +1,1 @@
+custom_2 = ['soft glow lighting', 'spotlight', 'cinematic', 'dramatic lighting', 'volumetric light', 'HDR', 'rim lighting', 'backlit', 'ambient lighting', 'well lit']
