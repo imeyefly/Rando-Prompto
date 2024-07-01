@@ -1,3 +1,5 @@
+# Rando-Prompto
+
 -This is Rando-Prompto, the customizable random prompt generator.
 
 ![](mainapp.png)
