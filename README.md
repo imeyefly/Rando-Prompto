@@ -6,7 +6,9 @@
 
 ![](terminal.png)
 
-- A video going over the basics of the app can be found here: https://youtu.be/dC7moqtbuCM
+
+- A video going over the basics of the app can be found here:
+  https://youtu.be/dC7moqtbuCM
 
 NOTE: This App Requires Python and PIP to be installed to run. Pyperclip is requires as well
 but can be installed with a file in the app folder.
