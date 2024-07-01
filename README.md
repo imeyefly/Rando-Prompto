@@ -58,7 +58,7 @@ but can be installed with a file in the app folder.
 # Why is this useful?
 
 * This app can quickly generate a random prompt containing the elements you want when you
-  don't feel like writing a prompt yurself.
+  don't feel like writing a prompt yourself.
 
 * With it's pre-installed 10,001 phrases, it will always give you something new, and keep
   things fresh.
