@@ -56,9 +56,12 @@ but can be installed with a file in the app folder.
 
 * There are 2 icons included for use with shortcuts of the bat files to launch Rando-Prompto and the manager.
 
+# Category Select
 ![](selectcategory.png)
 
+# Category Editor
 ![](editor.png)
 
+Phrase List Manager
 ![](listmanager.png)
   
