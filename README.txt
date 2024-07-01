@@ -4,6 +4,8 @@
 
 ![](terminal.png)
 
+- A video going over the basics of the app can be found here:
+
 
 -What does Rando-Prompto do?
 
@@ -55,7 +57,4 @@
 ![](editor.png)
 
 ![](listmanager.png)
-
-
-- A video going over the basics of the app can be found here:
   
