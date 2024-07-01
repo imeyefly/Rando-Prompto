@@ -9,11 +9,14 @@
 
 - A video going over the basics of the app can be found here:
   https://youtu.be/dC7moqtbuCM
+  
 
-NOTE: This App Requires Python and PIP to be installed to run. Pyperclip is requires as well
+# NOTE:
+This App Requires Python and PIP to be installed to run. Pyperclip is requires as well
 but can be installed with a file in the app folder.
 
--What does Rando-Prompto do?
+
+# What does Rando-Prompto do?
 
 * Rando-Prompto is a random prompt generator with 10,001 pre-installed phrases to make countless
   prompts.
@@ -36,7 +39,7 @@ but can be installed with a file in the app folder.
 * The app comes with a phrase list manager to allow for fast list building and managing the current lists.
 
 
--Why is this useful?
+# Why is this useful?
 
 * This app can quickly generate a random prompt containing the elements you want when you
   don't feel like writing a prompt yurself.
@@ -49,7 +52,7 @@ but can be installed with a file in the app folder.
   editor, it is as easy as it can be to add, edit, replace, and remove from the lists.
   
   
-- Extra Features:
+# Extra Features:
 
 * I also included the list tools I used to create the original lists. They are a collection of html based tools
   for doing things like removing apostrophes and other punctuation and formatting the lists for use in the manager.
