@@ -1,5 +1,6 @@
 -This is Rando-Prompto, the customizable random prompt generator.
 
+![Random Prompt Generator](https://github.com/imeyefly/Rando-Prompto/raw/master/mainapp.png)
 ![](mainapp.png)
 
 ![](terminal.png)
