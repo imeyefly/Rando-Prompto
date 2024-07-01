@@ -2,7 +2,7 @@
 
 -This is Rando-Prompto, the customizable random prompt generator.
 
-![](mainapp.png)
+![Main App](mainapp.png)
 
 ![](terminal.png)
 
