@@ -1,6 +1,6 @@
 -This is Rando-Prompto, the customizable random prompt generator.
 
-![MainApp](MainApp.PNG)
+![MainApp](MainApp.png)
 
 
 -What does Rando-Prompto do?
