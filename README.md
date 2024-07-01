@@ -67,7 +67,7 @@ but can be installed with a file in the app folder.
 
 
 # One More Thing:
-I recommend you watch the video I linkt under the first two images. It goes over the app in a little more detail.
+I recommend you watch the video I linked under the first two images. It goes over the app in a little more detail.
 
 
 # Category Select
