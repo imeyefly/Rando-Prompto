@@ -1,6 +1,6 @@
 -This is Rando-Prompto, the customizable random prompt generator.
 
-<img src='mainapp.png'/>
+![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://myoctocat.com/assets/images/base-octocat.svg)
 ![](mainapp.png)
 
 ![](terminal.png)
