@@ -26,7 +26,8 @@ but can be installed with a file in the app folder.
   Pyperclip installed.
 * Use "Run_Rando_Prompto" if you already have Pyperclip installed or after installing it.
 * Use "Run_Phrase_List_Manager" to run the phrase list manager.
-* I recomend making shortcuts of the .bat files and use the included icons for them.
+* I recomend making shortcuts of the .bat files ("Run_Rando_Prompto.bat" and "Run_Phrase_List_Manager.bat") and
+  use the included icons for them.
 
 
 # What does Rando-Prompto do?
