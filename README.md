@@ -49,7 +49,9 @@ but can be installed with a file in the app folder.
 
 * The app is completely customizable, so you can have only the kinds of phrases you want.
   From the category names to the contents, it all can be changed. And with the category
-  editor, it is as easy as it can be to add, edit, replace, and remove from the lists.
+  editor, it is as easy as it can be to add, edit, replace, and remove from the lists,
+
+* The generated prompts may just inspire you to prompt in ways you may not otherwise think of.
   
   
 # Extra Features:
@@ -60,6 +62,11 @@ but can be installed with a file in the app folder.
 * I also included a Backups.zip file to help restore broken list files.
 
 * There are 2 icons included for use with shortcuts of the bat files to launch Rando-Prompto and the manager.
+
+
+# One More Thing:
+I recommend you watch the video I linkt under the first two images. It goes over the app in a little more detail.
+
 
 # Category Select
 ![](selectcategory.png)
