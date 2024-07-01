@@ -2,8 +2,10 @@
 
 -This is Rando-Prompto, the customizable random prompt generator.
 
+# Main App
 ![Main App](mainapp.png)
 
+# Teminal View
 ![](terminal.png)
 
 
