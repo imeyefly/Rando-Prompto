@@ -21,7 +21,7 @@ but can be installed with a file in the app folder.
 # How to run the app:
 * Download the zip file and extract it.
 * Inside the app folder will be 3 .bat files. "Run_Rando_Prompto",
-  "Run_Rando_Prompto_This_File_Installs_or_Updates_Dependencies_Before_Running_App" "Run_Phrase_List_Manager".
+  "Run_Rando_Prompto_This_File_Installs_or_Updates_Dependencies_Before_Running_App" and "Run_Phrase_List_Manager".
 * Use "Run_Rando_Prompto_This_File_Installs_or_Updates_Dependencies_Before_Running_App" if you do not have
   Pyperclip installed.
 * Use "Run_Rando_Prompto" if you already have Pyperclip installed or after installing it.
