@@ -69,7 +69,7 @@
 
 * The app is completely customizable, so you can have only the kinds of phrases you want.
   From the category names to the contents, it all can be changed. And with the category
-  editor, it is as easy as it can be to add, edit, replace, and remove from the lists,
+  editor, it is as easy as it can be to add, edit, replace, and remove from the lists.
 
 * The generated prompts may just inspire you to prompt in ways you may not otherwise think of.
 
