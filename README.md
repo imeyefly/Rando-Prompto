@@ -14,8 +14,12 @@
   https://youtu.be/dC7moqtbuCM
   
   
+# Standalone EXE added:
+I added an EXE version of the app for people that do not want to install python to use the app.
+It only requires windows 10 or later to run.
 
-# Rquirements:
+
+# Rquirements For The Python Version:
 This App Requires Python and PIP to be installed to run. Pyperclip is requires as well
 but can be installed with a file in the app folder.
 
@@ -68,6 +72,11 @@ but can be installed with a file in the app folder.
   editor, it is as easy as it can be to add, edit, replace, and remove from the lists,
 
 * The generated prompts may just inspire you to prompt in ways you may not otherwise think of.
+
+
+# The Standalone EXE:
+* I put the exe version in a zip file inside the main app folder. Feel free to use either one. But the EXE
+  version does not have the terminal to display any info or the prompt history.
   
   
 # Extra Features:
