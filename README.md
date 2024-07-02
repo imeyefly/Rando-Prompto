@@ -14,7 +14,7 @@
   https://youtu.be/dC7moqtbuCM
   
   
-# Standalone EXE added:
+# Standalone EXEs added:
 * I added an EXE version of the app for people that do not want to install python to use the app.
   It only requires windows 10 or later to run.
 
@@ -74,9 +74,10 @@
 * The generated prompts may just inspire you to prompt in ways you may not otherwise think of.
 
 
-# The Standalone EXE:
-* I put the exe version in a zip file inside the main app folder. Feel free to use either one. But the EXE
-  version does not have the terminal to display any info or the prompt history.
+# The Standalone EXEs:
+* I put the exe versions of Rando-Prompto and the Phrase List Manager in zip files inside the
+* main app folder. Feel free to use either one. But the EXE version does not have the terminal
+* to display any info or the prompt history.
   
   
 # Extra Features:
