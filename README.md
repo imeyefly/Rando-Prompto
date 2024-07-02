@@ -15,13 +15,13 @@
   
   
 # Standalone EXE added:
-I added an EXE version of the app for people that do not want to install python to use the app.
-It only requires windows 10 or later to run.
+* I added an EXE version of the app for people that do not want to install python to use the app.
+  It only requires windows 10 or later to run.
 
 
 # Rquirements For The Python Version:
-This App Requires Python and PIP to be installed to run. Pyperclip is requires as well
-but can be installed with a file in the app folder.
+* This App Requires Python and PIP to be installed to run. Pyperclip is requires as well
+  but can be installed with a file in the app folder.
 
 
 # How to run the app:
