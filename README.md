@@ -15,8 +15,8 @@
   
   
 # Standalone EXEs added:
-* I added an EXE version of the app for people that do not want to install python to use the app.
-  It only requires windows 10 or later to run.
+* I added standalone EXE versions of Rando-Prompto and the Phrase List Manager for people that do not want to
+* install python to use the app. It only requires windows 10 or later to run.
 
 
 # Rquirements For The Python Version:
