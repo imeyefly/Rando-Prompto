@@ -35,6 +35,9 @@
 * I recomend making shortcuts of the .bat files ("Run_Rando_Prompto.bat" and "Run_Phrase_List_Manager.bat") and
   use the included icons for them.
 
+* If you are using the EXE version, just extract the main zip and locate the zip inside the folder, containing
+  the exe file you want to use, and run the exe file.
+
 
 # What does Rando-Prompto do?
 
